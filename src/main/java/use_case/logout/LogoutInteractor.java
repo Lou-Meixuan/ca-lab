@@ -1,5 +1,7 @@
 package use_case.logout;
 
+import interface_adapter.logout.LogoutPresenter;
+
 /**
  * The Logout Interactor.
  */
@@ -16,8 +18,11 @@ public class LogoutInteractor implements LogoutInputBoundary {
     public void execute() {
         // TODO: implement the logic of the Logout Use Case
         // * set the current username to null in the DAO
+        String currentUsername = null;
         // * instantiate the `LogoutOutputData`, which needs to contain the username.
+        LogoutOutputData response = new LogoutOutputData(currentUsername);
         // * tell the presenter to prepare a success view.
+        new prepareSuccessView(response);
     }
 }
 
